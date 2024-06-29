@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.table-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+.btn {
+    background-color: #166fc8;
+    border: 0.5px solid #4e4e4e;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn-reset {
+    background-color: white;
+    color: #166fc8;
+}
