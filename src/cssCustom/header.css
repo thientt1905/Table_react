@@ -14,10 +14,11 @@
     padding: 6px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+  
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -27,4 +28,14 @@
 .btn-reset {
     background-color: white;
     color: #166fc8;
+}
+
+.containerMenu{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px 0px 0px;
+}
+
+.menucss{
+    min-width: 600px;
 }
