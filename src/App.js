@@ -1,23 +1,25 @@
-import { Button } from "antd";
 import "./App.css";
 import Header from "./component/Header/Header";
 import "./cssCustom/header.css";
-import ListData from "./test";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Layout } from "antd";
+import { Content, Footer } from "antd/es/layout/layout";
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="header-container">
-        <Header />
-      </div>
-      <div className="main-container">
-        <div className="sidenav-container"></div>
-        <div className="app-content"></div>
+    <Layout>
+      <Header />
+      <Content style={styles.content}>
         <Outlet />
-      </div>
-    </div>
+      </Content>
+      <Footer style={styles.footer}>thientt1905</Footer>
+    </Layout>
   );
 }
 
 export default App;
+const styles = {
+  content: { padding: "0 32px", minHeight: "calc(100vh - 134px)" },
+  layout: { padding: "12px 0" },
+  footer: { textAlign: "center" },
+};

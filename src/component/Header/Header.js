@@ -11,12 +11,17 @@ const Header = () => {
     navigate(key);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token_user");
+    navigate("/login");
+  };
+
   const settingsMenu = (
     <Menu>
-      <Menu.Item key="/login" onClick={() => handleClick("../Auth/Login")}>
+      {/* <Menu.Item key="/login" onClick={() => handleClick("/login")}>
         Login
-      </Menu.Item>
-      <Menu.Item key="/logout" onClick={() => handleClick("/logout")}>
+      </Menu.Item> */}
+      <Menu.Item key="/logout" onClick={() => handleLogout()}>
         Logout
       </Menu.Item>
       <Menu.Item key="/profile" onClick={() => handleClick("/profile")}>
@@ -65,6 +70,12 @@ const Header = () => {
           >
             Page
           </Button>
+          {/* <Button
+            type={current === "/login" ? "primary" : "default"}
+            onClick={() => handleClick("/login")}
+          >
+            Login
+          </Button> */}
         </div>
         <Dropdown overlay={settingsMenu}>
           <Button type={current.includes("/settings") ? "primary" : "default"}>

@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import Filter from "./Filter.js";
-import "./cssCustom/header.css";
-import TableCustom from "./Table.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -17,89 +13,14 @@ import {
   Table,
   Popconfirm,
 } from "antd";
-import moment from "moment";
 import dayjs from "dayjs";
-import { Header } from "antd/es/layout/layout.js";
 
 const { Option } = Select;
 
-const items = [
-  {
-    label: "Quản lý Post",
-    key: "Post",
-  },
-  {
-    label: "Quản lý nhân sự",
-    key: "Staff",
-  },
-  {
-    label: "Doanh thu",
-    key: "revenue",
-  },
-  {
-    key: "finance",
-    label: "Quản lý tài chính",
-  },
-];
-
-const { RangePicker } = DatePicker;
-const initialData = [
-  {
-    id: "1",
-    key: "1",
-    article: "React",
-    author: "Facebook",
-    content: "React is a JavaScript library for building user interfaces.",
-    updateDay: "2021-09-01",
-    Status: ["Hoạt động"],
-  },
-  {
-    id: "2",
-    key: "2",
-    article: "Vue",
-    author: "Evan You",
-    content: "Vue.js is a progressive JavaScript framework.",
-    updateDay: "2021-09-02",
-    Status: ["Hoạt động"],
-  },
-  {
-    id: "3",
-    key: "3",
-    article: "Angular",
-    author: "Google",
-    content:
-      "Angular is a platform and framework for building single-page client applications using HTML and TypeScript.",
-    updateDay: "2021-09-03",
-    Status: ["Nghỉ"],
-  },
-  {
-    id: "4",
-    key: "4",
-    article: "Node.js",
-    author: "Ryan Dahl",
-    content:
-      "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
-    updateDay: "2021-09-04",
-    Status: ["Hoạt động"],
-  },
-  {
-    id: "5",
-    key: "5",
-    article: "Express.js",
-    author: "TJ Holowaychuk",
-    content:
-      "Express.js, or simply Express, is a back end web application framework for Node.js.",
-    updateDay: "2021-09-05",
-    Status: ["Nghỉ"],
-  },
-];
-
 const ListData = () => {
-  const [dataSource, setDataSource] = useState(initialData);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
-  const [current, setCurrent] = useState("Post");
   const [form] = Form.useForm();
   const [data, setData] = useState();
   const [needRefresh, setNeedRefresh] = useState(false);
@@ -208,10 +129,6 @@ const ListData = () => {
 
   const handleCancel = () => {
     setIsModalOpen(false);
-  };
-
-  const onClick = (e) => {
-    setCurrent(e.key);
   };
 
   const columns = [
@@ -377,7 +294,7 @@ const ListData = () => {
             </Modal>
           </div>
         </div>
-        <Filter />
+
         <Table dataSource={data} columns={columns} />
       </div>
     </div>
