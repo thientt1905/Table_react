@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.scss";
+import "../../cssCustom/Login.scss";
 import { useNavigate } from "react-router-dom";
 import { Button, Col, Form, Input, Row } from "antd";
 import Layout, { Content } from "antd/es/layout/layout";

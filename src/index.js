@@ -4,12 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import User from "./component/User/User";
-import Page from "./component/Page/Page";
-import ListData from "./component/posts/ListPost";
-import HomePage from "./component/Home/HomePage";
-import Login from "./component/Auth/Login";
-import RequireAuth from "./component/Auth/requirAuth";
+import User from "./screen/User/User.js";
+import Page from "./screen/Page/Page.js";
+import ListData from "./screen/Posts/ListPost.js";
+import HomePage from "./screen/Home/HomePage.js";
+import Login from "./screen/SignIn/Login.js";
+import RequireAuth from "./component/Auth/requirAuth.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

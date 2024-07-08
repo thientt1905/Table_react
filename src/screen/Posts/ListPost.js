@@ -14,6 +14,7 @@ import {
   Popconfirm,
 } from "antd";
 import dayjs from "dayjs";
+import { postsAPI } from "../../api/postAPI";
 
 const { Option } = Select;
 
@@ -24,6 +25,7 @@ const ListData = () => {
   const [form] = Form.useForm();
   const [data, setData] = useState();
   const [needRefresh, setNeedRefresh] = useState(false);
+  const { getAll } = postsAPI;
 
   const showModal = () => {
     setIsEditMode(false);
@@ -32,17 +34,13 @@ const ListData = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://6683759c4102471fa4ca20eb.mockapi.io/post"
-        ).then((res) => res.json());
-        setData(response);
-      } catch (error) {
+    getAll()
+      .then((res) => {
+        setData(res);
+      })
+      .catch((error) => {
         console.error("Error fetching data:", error.message);
-      }
-    };
-    fetchData();
+      });
   }, [needRefresh]);
 
   const createPost = async (newPost) => {

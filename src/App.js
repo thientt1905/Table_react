@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./component/Header/Header";
+import Header from "./screen/Header/Header";
 import "./cssCustom/header.css";
 import { Outlet } from "react-router-dom";
 import { Layout } from "antd";
